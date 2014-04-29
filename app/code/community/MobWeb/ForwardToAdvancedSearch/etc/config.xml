@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MobWeb_ForwardToAdvancedSearch>
+            <version>0.1.0</version>
+        </MobWeb_ForwardToAdvancedSearch>
+    </modules>
+    <global>
+        <models>
+            <forwardtoadvancedsearch>
+                <class>MobWeb_ForwardToAdvancedSearch_Model</class>
+            </forwardtoadvancedsearch>
+        </models>
+        <helpers>
+            <forwardtoadvancedsearch>
+                <class>MobWeb_ForwardToAdvancedSearch_Helper</class>
+            </forwardtoadvancedsearch>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_postdispatch_catalogsearch_result_index>
+                <observers>
+                    <forwardtoadvancedsearch>
+                        <class>forwardtoadvancedsearch/observer</class>
+                        <method>controllerActionPostdispatchCatalogsearchResultIndex</method>
+                    </forwardtoadvancedsearch>
+                </observers>
+            </controller_action_postdispatch_catalogsearch_result_index>
+        </events>
+    </frontend>
+ </config>

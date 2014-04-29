@@ -1,0 +1,6 @@
+app/code/community/MobWeb/ForwardToAdvancedSearch app/code/community/MobWeb/ForwardToAdvancedSearch/
+
+app/etc/modules/MobWeb_ForwardToAdvancedSearch.xml app/etc/modules/MobWeb_ForwardToAdvancedSearch.xml
+
+# Clear the cache
+@shell   rm -rf $PROJECT/var/cache/* && echo "Magento Cache cleared"
