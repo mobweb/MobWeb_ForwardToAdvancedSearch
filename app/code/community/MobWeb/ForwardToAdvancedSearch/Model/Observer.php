@@ -5,9 +5,9 @@ class MobWeb_ForwardToAdvancedSearch_Model_Observer
     public function controllerActionPostdispatchCatalogsearchResultIndex($observer)
     {
         $result = Mage::app()->getLayout()->getBlock('search_result_list');
-        $products = $result->getLoadedProductCollection();
 
-        if(0 === (int) $products->getSize()) {
+        // Check if a result was found and if it's empty
+        if($result && (0 === (int) $result->getLoadedProductCollection()->getSize())) {
             // Generate a notice to be displayed on the next page load
             Mage::getSingleton('core/session')->addError(Mage::helper('forwardtoadvancedsearch')->__('Your search returns no results. Please try again using our advanced search.'));
 
